@@ -7,7 +7,7 @@ struct Node {
     Node *right;
 };
 
-Node *CreateNode(int data) {
+Node* CreateNode(int data) {
     Node *newNode = new Node();
     if (!newNode) {
         cout << "Memory error\n";
@@ -18,7 +18,7 @@ Node *CreateNode(int data) {
     return newNode;
 }
 
-Node *InsertNode(Node *root, int data) {
+Node* InsertNode(Node *root, int data) {
     if (root == NULL) {
         root = CreateNode(data);
         return root;
@@ -41,6 +41,7 @@ Node *InsertNode(Node *root, int data) {
             return root;
         }
     }
+    return root;
 }
 
 void deletDeepest(struct Node *root,
