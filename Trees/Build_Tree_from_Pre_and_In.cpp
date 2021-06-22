@@ -50,7 +50,7 @@ void inorderPrint(Node *root)
 }
 int main()
 {
-    int preorder[] = {1, 2, 3, 4, 5};
+    int preorder[] = {1, 2, 4, 3, 5};
     int inorder[] = {4, 2, 1, 5, 3};
     Node *root = buildTree(preorder, inorder, 0, 4);
     inorderPrint(root);
