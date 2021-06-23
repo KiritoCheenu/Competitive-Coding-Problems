@@ -19,7 +19,7 @@ int sumNodes(Node *root)
 {
     if (root == NULL)
         return 0;
-    return countNodes(root->left) + countNodes(root->right) + root->data;
+    return sumNodes(root->left) + sumNodes(root->right) + root->data;
 }
 
 int main()
