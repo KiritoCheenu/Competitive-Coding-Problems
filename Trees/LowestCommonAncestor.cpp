@@ -51,7 +51,7 @@ Node *LCAOptimised(Node *root, int n1, int n2)
         return root;
     if (leftLCA != NULL)
         return leftLCA;
-    if (rightLCA != NULL)
+    // if (rightLCA != NULL)
         return rightLCA;
 }
 int main()
@@ -67,5 +67,5 @@ int main()
     root->right->left->left = new Node(8);
     cout << LCA(root, 8, 7);
     cout << endl;
-    cout << LCAOptimised(root, 8, 7);
+    cout << LCAOptimised(root, 8, 7)->data;
 }
