@@ -19,7 +19,7 @@ Node *flattenTree(Node *root)
 {
     if (root == NULL || (root->left == NULL && root->right == NULL))
         return NULL;
-    if (root->right != NULL)
+    if (root->left != NULL)
         flattenTree(root->left);
     if (root->right == NULL && root->left != NULL)
     {
