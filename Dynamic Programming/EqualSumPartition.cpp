@@ -4,7 +4,7 @@ using namespace std;
 
 static int dp[101][1001]; //n=101,sum=1001 constraints will be given in the question
 
-int subsetsum(int arr[], int sum, int n)
+bool subsetsum(int arr[], int sum, int n)
 {
     for (int i = 0; i < n + 1; i++)
         dp[i][0] = 1;
@@ -27,25 +27,21 @@ int subsetsum(int arr[], int sum, int n)
 }
 int main()
 {
-    int arr[] = {1, 5, 5, 11};
+    int arr[] = {1, 5, 6, 11};
     int sum = 0;
     int n = 4;
     for (int i = 0; i < n; i++)
         sum += arr[i];
-    cout<<sum<<endl;
     if (sum % 2 == 1)
-        cout << "NO";
-    else
     {
-        if (subsetsum(arr, sum / 2, n) == 1)
-            cout << "YES";
-        else
-            cout << "No";
+        cout << "No";
+        return 0;
     }
-    cout<<endl;
+    cout << (subsetsum(arr, sum / 2, n) == 1 ? "Yes" : "No");
+    cout << endl;
     for (int i = 0; i < n + 1; i++)
     {
-        for (int j = 0; j < sum + 1; j++)
+        for (int j = 0; j < sum/2 + 1; j++)
             cout << dp[i][j] << " ";
         cout << endl;
     }

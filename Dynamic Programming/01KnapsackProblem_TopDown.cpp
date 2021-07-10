@@ -4,7 +4,7 @@ using namespace std;
 
 static int dp[101][1001]; //n=101,cap=1001 constraints will be given in the question
 
-int knapsnack(int wt[], int val[], int cap, int n)
+int knapsack(int wt[], int val[], int cap, int n)
 {
     for (int i = 1; i < n + 1; i++)
     {
@@ -27,7 +27,7 @@ int main()
     int cap = 7;
     int n = 4;
 
-    cout << knapsnack(wt, val, cap, n) << endl;
+    cout << knapsack(wt, val, cap, n) << endl;
 
     for (int i = 0; i < n + 1; i++)
     {
