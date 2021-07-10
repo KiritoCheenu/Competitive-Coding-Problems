@@ -27,11 +27,22 @@ int subsetsum(int arr[], int sum, int n)
 }
 int main()
 {
-    int arr[] = {3, 34, 4, 12, 5, 2};
-    int sum = 9;
-    int n = 6;
-    cout << subsetsum(arr, sum, n) << endl;
-
+    int arr[] = {1, 5, 5, 11};
+    int sum = 0;
+    int n = 4;
+    for (int i = 0; i < n; i++)
+        sum += arr[i];
+    cout<<sum<<endl;
+    if (sum % 2 == 1)
+        cout << "NO";
+    else
+    {
+        if (subsetsum(arr, sum / 2, n) == 1)
+            cout << "YES";
+        else
+            cout << "No";
+    }
+    cout<<endl;
     for (int i = 0; i < n + 1; i++)
     {
         for (int j = 0; j < sum + 1; j++)

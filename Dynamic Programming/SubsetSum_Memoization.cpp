@@ -31,7 +31,7 @@ int main()
     memset(dp, -1, sizeof(dp[0][0]) * 101 * 1001);
 
     int arr[] = {1, 5, 3, 7, 4};
-    int sum = 12;
+    int sum = 25;
     int n = 5;
 
     cout << subsetsum(arr, sum, n) << endl;
