@@ -27,13 +27,13 @@ int subsetsum(int arr[], int sum, int n)
 }
 int main()
 {
-    int arr[] = {1, 1, 2, 3};
-    int diff = 2;
+    int arr[] = {1, 1,2 , 3};
+    int targetsum = 1;
     int n = 4;
     int sum = 0;
     for (int x : arr)
         sum += x;
-    int s1 = (sum - diff);
+    int s1 = (sum - targetsum);
     if (s1 % 2 == 1)
         cout << 0 << endl;
     else
