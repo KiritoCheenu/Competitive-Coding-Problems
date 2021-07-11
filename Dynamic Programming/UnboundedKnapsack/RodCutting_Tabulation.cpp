@@ -4,16 +4,14 @@ using namespace std;
 
 static int dp[101][1001]; //n=101,cap=1001 constraints will be given in the question
 
-int knapsack(int wt[], int val[], int cap, int n)
+int knapsack(int length[], int prices[], int cap, int n)
 {
     for (int i = 1; i < n + 1; i++)
     {
         for (int j = 1; j < cap + 1; j++)
         {
-            if (wt[i - 1] <= j)
-            {
-                dp[i][j] = max(val[i - 1] + dp[i - 1][cap - wt[i - 1]], dp[i - 1][j]);
-            }
+            if (length[i - 1] <= j)
+                dp[i][j] = max(prices[i - 1] + dp[i][j - length[i - 1]], dp[i - 1][j]);
             else
                 dp[i][j] = dp[i - 1][j];
         }
@@ -22,12 +20,12 @@ int knapsack(int wt[], int val[], int cap, int n)
 }
 int main()
 {
-    int val[] = {1, 3, 4, 5};
-    int wt[] = {1, 4, 5, 7};
-    int cap = 7;
-    int n = 4;
+    int cap = 8;
+    int prices[] = {1, 5, 8, 9, 10, 17, 17, 20};
+    int length[] = {1, 2, 3, 4, 5, 6, 7, 8};
+    int n = 8;
 
-    cout << knapsack(wt, val, cap, n) << endl;
+    cout << knapsack(length, prices, cap, n) << endl;
 
     for (int i = 0; i < n + 1; i++)
     {
