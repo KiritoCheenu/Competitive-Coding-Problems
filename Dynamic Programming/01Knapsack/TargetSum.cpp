@@ -27,18 +27,20 @@ int subsetsum(int arr[], int sum, int n)
 }
 int main()
 {
-    int arr[] = {1, 1,2 , 3};
+    int arr[] = {1, 1, 2, 3};
     int targetsum = 1;
     int n = 4;
     int sum = 0;
     for (int x : arr)
         sum += x;
-    int s1 = (sum - targetsum);
-    if (s1 % 2 == 1)
-        cout << 0 << endl;
+    int s1 = abs(sum - targetsum);
+    if (sum < targetsum)
+        cout << 0;
+    else if (s1 % 2 == 1)
+        cout << 0;
     else
-        cout << subsetsum(arr, s1 / 2, n) << endl;
-
+        cout << subsetsum(arr, s1 / 2, n);
+    cout << endl;
     for (int i = 0; i < n + 1; i++)
     {
         for (int j = 0; j < sum + 1; j++)
