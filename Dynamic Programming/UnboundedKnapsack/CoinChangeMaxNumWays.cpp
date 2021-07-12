@@ -6,7 +6,7 @@ static int dp[101][1001]; //n=101,cap=1001 constraints will be given in the ques
 
 int knapsack(int coin[], int cap, int n)
 {
-    for (int i = 1; i < n + 1; i++)
+    for (int i = 0; i < n + 1; i++)
         dp[i][0] = 1;
     for (int i = 1; i < n + 1; i++)
     {
@@ -24,16 +24,16 @@ int knapsack(int coin[], int cap, int n)
 }
 int main()
 {
-    int cap = 5;
-    int coin[] = {1, 2, 3,5};
-    int n = 4;
+    int cap = 10;
+     int coin[] = {1, 5, 3, 7, 4};
+    int n = 5;
 
     cout << knapsack(coin, cap, n) << endl;
 
-    for (int i = 0; i < n + 1; i++)
-    {
-        for (int j = 0; j < cap + 1; j++)
-            cout << dp[i][j] << " ";
-        cout << endl;
-    }
+    // for (int i = 0; i < n + 1; i++)
+    // {
+    //     for (int j = 0; j < cap + 1; j++)
+    //         cout << dp[i][j] << " ";
+    //     cout << endl;
+    // }
 }

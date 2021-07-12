@@ -21,10 +21,10 @@ int knapsack(int wt[], int val[], int cap, int n)
 int main()
 {
     memset(dp, -1, sizeof(dp[0][0]) * 101 * 1001);
-    int wt[] = {1, 4, 5, 7};
-    int val[] = {1, 3, 4, 5};
-    int cap = 7;
-    int n = 4;
+    int val[] = {1, 3, 4, 5, 7};
+    int wt[] = {1, 5, 3, 7, 4};
+    int cap = 10;
+    int n = 5;
 
     cout << knapsack(wt, val, cap, n) << endl;
 

@@ -31,9 +31,9 @@ int knapsack(int coin[], int cap, int n)
 }
 int main()
 {
-    int cap = 100;
-    int coin[] = {5, 10, 15};
-    int n = 3;
+    int cap = 10;
+    int coin[] = {1, 5, 3, 7, 4};
+    int n = 5;
 
     cout << knapsack(coin, cap, n) << endl;
 

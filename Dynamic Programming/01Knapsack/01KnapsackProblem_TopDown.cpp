@@ -22,10 +22,10 @@ int knapsack(int wt[], int val[], int cap, int n)
 }
 int main()
 {
-    int val[] = {1, 3, 4, 5};
-    int wt[] = {1, 4, 5, 7};
-    int cap = 7;
-    int n = 4;
+    int val[] = {1, 3, 4, 5, 7};
+    int wt[] = {1, 5, 3, 7, 4};
+    int cap = 10;
+    int n = 5;
 
     cout << knapsack(wt, val, cap, n) << endl;
 
