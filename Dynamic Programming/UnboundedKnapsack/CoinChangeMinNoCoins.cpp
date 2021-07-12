@@ -4,15 +4,24 @@ using namespace std;
 
 static int dp[101][1001]; //n=101,cap=1001 constraints will be given in the question
 
-int knapsack(int wt[], int val[], int cap, int n)
+int knapsack(int coin[], int cap, int n)
 {
-    for (int i = 1; i < n + 1; i++)
+    for (int i = 0; i < cap + 1; i++)
+        dp[0][i] = INT_MAX - 1;
+    for (int i = 1; i < cap + 1; i++)
+    {
+        if (i % coin[0] == 0)
+            dp[1][i] = i / coin[0];
+        else
+            dp[1][i] = INT_MAX - 1;
+    }
+    for (int i = 2; i < n + 1; i++)
     {
         for (int j = 1; j < cap + 1; j++)
         {
-            if (wt[i - 1] <= j)
+            if (coin[i - 1] <= j)
             {
-                dp[i][j] = max(val[i - 1] + dp[i][j - wt[i - 1]], dp[i - 1][j]);
+                dp[i][j] = min(1 + dp[i][j - coin[i - 1]], dp[i - 1][j]);
             }
             else
                 dp[i][j] = dp[i - 1][j];
@@ -23,11 +32,10 @@ int knapsack(int wt[], int val[], int cap, int n)
 int main()
 {
     int cap = 100;
-    int val[] = {10, 30, 20};
-    int wt[] = {5, 10, 15};
-    int n = 4;
+    int coin[] = {5, 10, 15};
+    int n = 3;
 
-    cout << knapsack(wt, val, cap, n) << endl;
+    cout << knapsack(coin, cap, n) << endl;
 
     // for (int i = 0; i < n + 1; i++)
     // {
