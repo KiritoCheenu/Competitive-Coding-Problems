@@ -1,0 +1,9 @@
+int  solve(int arr[],int i,int j){
+    if(i>j)
+        return 0;
+    for(int k=i;k<j;k++){
+        tempans=solve(ar,i,k) + or - or any operation solve(arr,k+1,j);
+        ans=func(tempans);
+    }
+    return ans;
+}
