@@ -15,7 +15,7 @@ int mcm(int arr[], int i, int j)
         int temp = mcm(arr, i, k) + mcm(arr, k + 1, j) + arr[i - 1] * arr[k] * arr[j];
         mn = min(mn, temp);
     }
-    dp[i][j]=mn;
+    dp[i][j] = mn;
     return dp[i][j];
 }
 
