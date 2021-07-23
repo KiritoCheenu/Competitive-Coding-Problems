@@ -9,11 +9,14 @@ int lcs(string x, string y, int n, int m)
     {
         for (int j = 0; j < m + 1; j++)
         {
+
             if (i == 0 || j == 0)
             {
                 dp[i][j] = 0;
                 continue;
             }
+            if (i == j)
+                dp[i][j] = 1;
             if (x[i - 1] == y[j - 1])
                 dp[i][j] = 1 + dp[i - 1][j - 1];
             else
@@ -27,7 +30,7 @@ int main()
 {
     string x = "bbbab";
     string y = x;
-    reverse(y.begin(),y.end());
+    reverse(y.begin(), y.end());
 
     int n = x.length();
     int m = y.length();

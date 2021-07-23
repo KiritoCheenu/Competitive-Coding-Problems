@@ -21,19 +21,19 @@ int lcs(string x, string y, int n, int m)
             result = max(result, dp[i][j]);
         }
     }
-    // for (int i = 0; i < n + 1; i++)
-    // {
-    //     for (int j = 0; j < m + 1; j++)
-    //         cout << dp[i][j] << " ";
-    //     cout << endl;
-    // }
+    for (int i = 0; i < n + 1; i++)
+    {
+        for (int j = 0; j < m + 1; j++)
+            cout << dp[i][j] << " ";
+        cout << endl;
+    }
     return result;
 }
 
 int main()
 {
     string x = "AGGTAB";
-    string y = "GTXAYB";
+    string y = "GXTXAYB";
     int n = x.length();
     int m = y.length();
     cout << lcs(x, y, n, m);
