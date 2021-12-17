@@ -3,3 +3,7 @@
 .vscode/launch.json
 .vscode/tasks.json
 *.prob
+.vscode/c_cpp_properties.json
+.vscode/settings.json
+.vscode/settings.json
+.vscode/settings.json
